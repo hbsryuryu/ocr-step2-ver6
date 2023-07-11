@@ -33,8 +33,3 @@ if (file_upload !=None):
     txt = engine.image_to_string(Image.open(file_upload), lang=set_language_list[set_language])
     st.write(txt) # 分析結果を表示
 
-    st.write("感情分析の結果") # 案内表示
-    from asari.api import Sonar # 文字から感情分析する機能をインポート
-    sonar = Sonar() # Sonar()をsonarに代入
-    res = sonar.ping(text=txt) # sonar.ping(text=分s系したい文字)で感情分析リクエストし、結果をresに代入
-    st.write(res["classes"]) # res["classes"]に結果が変えて来るので、これを表示
